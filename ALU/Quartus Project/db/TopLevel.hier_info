@@ -1,0 +1,1697 @@
+|TopLevel
+TDI => Scan_Chain:scan_instance.TDI
+TDO <= Scan_Chain:scan_instance.TDO
+TMS => Scan_Chain:scan_instance.TMS
+TCLK => Scan_Chain:scan_instance.TCLK
+TRST => Scan_Chain:scan_instance.TRST
+
+
+|TopLevel|Scan_Chain:scan_instance
+TDI => Scan_reg:In_Reg.SI
+TDO <= Scan_reg:Out_Reg.SO
+TMS => next_state.DATAB
+TMS => next_state.DATAB
+TMS => L2_en.DATAB
+TMS => next_state.DATAB
+TMS => Selector0.IN2
+TMS => Selector1.IN1
+TMS => Selector2.IN1
+TMS => Selector3.IN1
+TCLK => Scan_reg:In_Reg.clock
+TCLK => Scan_reg:Out_Reg.clock
+TCLK => current_state~1.DATAIN
+TRST => L1_en.OUTPUTSELECT
+TRST => L2_en.OUTPUTSELECT
+TRST => cap_shft.OUTPUTSELECT
+TRST => Scan_reg:In_Reg.reset
+TRST => Scan_reg:Out_Reg.reset
+TRST => current_state~3.DATAIN
+TRST => Scan_reg:In_Reg.sel_reg
+TRST => Scan_reg:Out_Reg.sel_reg
+TRST => state[2]$latch.LATCH_ENABLE
+TRST => state[1]$latch.LATCH_ENABLE
+TRST => state[0]$latch.LATCH_ENABLE
+TRST => next_state.s_update_166.LATCH_ENABLE
+TRST => next_state.s_capture_180.LATCH_ENABLE
+TRST => next_state.s_DR_187.LATCH_ENABLE
+TRST => next_state.s_idle_194.LATCH_ENABLE
+TRST => next_state.s_shift_173.LATCH_ENABLE
+dut_in[0] <= Scan_reg:In_Reg.PO[0]
+dut_in[1] <= Scan_reg:In_Reg.PO[1]
+dut_in[2] <= Scan_reg:In_Reg.PO[2]
+dut_in[3] <= Scan_reg:In_Reg.PO[3]
+dut_in[4] <= Scan_reg:In_Reg.PO[4]
+dut_in[5] <= Scan_reg:In_Reg.PO[5]
+dut_in[6] <= Scan_reg:In_Reg.PO[6]
+dut_in[7] <= Scan_reg:In_Reg.PO[7]
+dut_in[8] <= Scan_reg:In_Reg.PO[8]
+dut_in[9] <= Scan_reg:In_Reg.PO[9]
+dut_in[10] <= Scan_reg:In_Reg.PO[10]
+dut_in[11] <= Scan_reg:In_Reg.PO[11]
+dut_in[12] <= Scan_reg:In_Reg.PO[12]
+dut_in[13] <= Scan_reg:In_Reg.PO[13]
+dut_in[14] <= Scan_reg:In_Reg.PO[14]
+dut_in[15] <= Scan_reg:In_Reg.PO[15]
+dut_in[16] <= Scan_reg:In_Reg.PO[16]
+dut_in[17] <= Scan_reg:In_Reg.PO[17]
+dut_out[0] => Scan_reg:Out_Reg.PI[0]
+dut_out[1] => Scan_reg:Out_Reg.PI[1]
+dut_out[2] => Scan_reg:Out_Reg.PI[2]
+dut_out[3] => Scan_reg:Out_Reg.PI[3]
+dut_out[4] => Scan_reg:Out_Reg.PI[4]
+dut_out[5] => Scan_reg:Out_Reg.PI[5]
+dut_out[6] => Scan_reg:Out_Reg.PI[6]
+dut_out[7] => Scan_reg:Out_Reg.PI[7]
+state[0] <= state[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+state[2] <= state[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+state[3] <= <GND>
+state[4] <= <GND>
+state[5] <= <GND>
+state[6] <= <GND>
+state[7] <= <GND>
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg
+clock => L2[0].CLK
+clock => L2[1].CLK
+clock => L2[2].CLK
+clock => L2[3].CLK
+clock => L2[4].CLK
+clock => L2[5].CLK
+clock => L2[6].CLK
+clock => L2[7].CLK
+clock => L2[8].CLK
+clock => L2[9].CLK
+clock => L2[10].CLK
+clock => L2[11].CLK
+clock => L2[12].CLK
+clock => L2[13].CLK
+clock => L2[14].CLK
+clock => L2[15].CLK
+clock => L2[16].CLK
+clock => L2[17].CLK
+clock => L1[0].CLK
+clock => L1[1].CLK
+clock => L1[2].CLK
+clock => L1[3].CLK
+clock => L1[4].CLK
+clock => L1[5].CLK
+clock => L1[6].CLK
+clock => L1[7].CLK
+clock => L1[8].CLK
+clock => L1[9].CLK
+clock => L1[10].CLK
+clock => L1[11].CLK
+clock => L1[12].CLK
+clock => L1[13].CLK
+clock => L1[14].CLK
+clock => L1[15].CLK
+clock => L1[16].CLK
+clock => L1[17].CLK
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PI[1] => mux1[1].DATAB
+PI[1] => mux2.DATAB
+PI[2] => mux1[2].DATAB
+PI[2] => mux2.DATAB
+PI[3] => mux1[3].DATAB
+PI[3] => mux2.DATAB
+PI[4] => mux1[4].DATAB
+PI[4] => mux2.DATAB
+PI[5] => mux1[5].DATAB
+PI[5] => mux2.DATAB
+PI[6] => mux1[6].DATAB
+PI[6] => mux2.DATAB
+PI[7] => mux1[7].DATAB
+PI[7] => mux2.DATAB
+PI[8] => mux1[8].DATAB
+PI[8] => mux2.DATAB
+PI[9] => mux1[9].DATAB
+PI[9] => mux2.DATAB
+PI[10] => mux1[10].DATAB
+PI[10] => mux2.DATAB
+PI[11] => mux1[11].DATAB
+PI[11] => mux2.DATAB
+PI[12] => mux1[12].DATAB
+PI[12] => mux2.DATAB
+PI[13] => mux1[13].DATAB
+PI[13] => mux2.DATAB
+PI[14] => mux1[14].DATAB
+PI[14] => mux2.DATAB
+PI[15] => mux1[15].DATAB
+PI[15] => mux2.DATAB
+PI[16] => mux1[16].DATAB
+PI[16] => mux2.DATAB
+PI[17] => mux1[17].DATAB
+PI[17] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[7] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[8] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[9] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[10] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[11] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[12] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[13] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[14] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[15] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[16] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[17] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[17].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[17].OUTPUTSELECT
+cap_shft => mux1[16].OUTPUTSELECT
+cap_shft => mux1[15].OUTPUTSELECT
+cap_shft => mux1[14].OUTPUTSELECT
+cap_shft => mux1[13].OUTPUTSELECT
+cap_shft => mux1[12].OUTPUTSELECT
+cap_shft => mux1[11].OUTPUTSELECT
+cap_shft => mux1[10].OUTPUTSELECT
+cap_shft => mux1[9].OUTPUTSELECT
+cap_shft => mux1[8].OUTPUTSELECT
+cap_shft => mux1[7].OUTPUTSELECT
+cap_shft => mux1[6].OUTPUTSELECT
+cap_shft => mux1[5].OUTPUTSELECT
+cap_shft => mux1[4].OUTPUTSELECT
+cap_shft => mux1[3].OUTPUTSELECT
+cap_shft => mux1[2].OUTPUTSELECT
+cap_shft => mux1[1].OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+clock => L2[0].CLK
+clock => L2[1].CLK
+clock => L2[2].CLK
+clock => L2[3].CLK
+clock => L2[4].CLK
+clock => L2[5].CLK
+clock => L2[6].CLK
+clock => L2[7].CLK
+clock => L1[0].CLK
+clock => L1[1].CLK
+clock => L1[2].CLK
+clock => L1[3].CLK
+clock => L1[4].CLK
+clock => L1[5].CLK
+clock => L1[6].CLK
+clock => L1[7].CLK
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PI[1] => mux1[1].DATAB
+PI[1] => mux2.DATAB
+PI[2] => mux1[2].DATAB
+PI[2] => mux2.DATAB
+PI[3] => mux1[3].DATAB
+PI[3] => mux2.DATAB
+PI[4] => mux1[4].DATAB
+PI[4] => mux2.DATAB
+PI[5] => mux1[5].DATAB
+PI[5] => mux2.DATAB
+PI[6] => mux1[6].DATAB
+PI[6] => mux2.DATAB
+PI[7] => mux1[7].DATAB
+PI[7] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[7] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[7].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[7].OUTPUTSELECT
+cap_shft => mux1[6].OUTPUTSELECT
+cap_shft => mux1[5].OUTPUTSELECT
+cap_shft => mux1[4].OUTPUTSELECT
+cap_shft => mux1[3].OUTPUTSELECT
+cap_shft => mux1[2].OUTPUTSELECT
+cap_shft => mux1[1].OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|ALU:dut_instance
+a[0] => EightBitAdder:adder1.a[0]
+a[0] => EightBitSubtractor:subtract1.a[0]
+a[0] => EightBitLeftShift:left1.a[0]
+a[0] => EightBitRightShift:right1.a[0]
+a[1] => EightBitAdder:adder1.a[1]
+a[1] => EightBitSubtractor:subtract1.a[1]
+a[1] => EightBitLeftShift:left1.a[1]
+a[1] => EightBitRightShift:right1.a[1]
+a[2] => EightBitAdder:adder1.a[2]
+a[2] => EightBitSubtractor:subtract1.a[2]
+a[2] => EightBitLeftShift:left1.a[2]
+a[2] => EightBitRightShift:right1.a[2]
+a[3] => EightBitAdder:adder1.a[3]
+a[3] => EightBitSubtractor:subtract1.a[3]
+a[3] => EightBitLeftShift:left1.a[3]
+a[3] => EightBitRightShift:right1.a[3]
+a[4] => EightBitAdder:adder1.a[4]
+a[4] => EightBitSubtractor:subtract1.a[4]
+a[4] => EightBitLeftShift:left1.a[4]
+a[4] => EightBitRightShift:right1.a[4]
+a[5] => EightBitAdder:adder1.a[5]
+a[5] => EightBitSubtractor:subtract1.a[5]
+a[5] => EightBitLeftShift:left1.a[5]
+a[5] => EightBitRightShift:right1.a[5]
+a[6] => EightBitAdder:adder1.a[6]
+a[6] => EightBitSubtractor:subtract1.a[6]
+a[6] => EightBitLeftShift:left1.a[6]
+a[6] => EightBitRightShift:right1.a[6]
+a[7] => EightBitAdder:adder1.a[7]
+a[7] => EightBitSubtractor:subtract1.a[7]
+a[7] => EightBitLeftShift:left1.a[7]
+a[7] => EightBitRightShift:right1.a[7]
+b[0] => EightBitAdder:adder1.b[0]
+b[0] => EightBitSubtractor:subtract1.b[0]
+b[0] => EightBitLeftShift:left1.b[0]
+b[0] => EightBitRightShift:right1.b[0]
+b[1] => EightBitAdder:adder1.b[1]
+b[1] => EightBitSubtractor:subtract1.b[1]
+b[1] => EightBitLeftShift:left1.b[1]
+b[1] => EightBitRightShift:right1.b[1]
+b[2] => EightBitAdder:adder1.b[2]
+b[2] => EightBitSubtractor:subtract1.b[2]
+b[2] => EightBitLeftShift:left1.b[2]
+b[2] => EightBitRightShift:right1.b[2]
+b[3] => EightBitAdder:adder1.b[3]
+b[3] => EightBitSubtractor:subtract1.b[3]
+b[3] => EightBitLeftShift:left1.b[3]
+b[3] => EightBitRightShift:right1.b[3]
+b[4] => EightBitAdder:adder1.b[4]
+b[4] => EightBitSubtractor:subtract1.b[4]
+b[4] => EightBitLeftShift:left1.b[4]
+b[4] => EightBitRightShift:right1.b[4]
+b[5] => EightBitAdder:adder1.b[5]
+b[5] => EightBitSubtractor:subtract1.b[5]
+b[5] => EightBitLeftShift:left1.b[5]
+b[5] => EightBitRightShift:right1.b[5]
+b[6] => EightBitAdder:adder1.b[6]
+b[6] => EightBitSubtractor:subtract1.b[6]
+b[6] => EightBitLeftShift:left1.b[6]
+b[6] => EightBitRightShift:right1.b[6]
+b[7] => EightBitAdder:adder1.b[7]
+b[7] => EightBitSubtractor:subtract1.b[7]
+b[7] => EightBitLeftShift:left1.b[7]
+b[7] => EightBitRightShift:right1.b[7]
+op[0] => c.IN0
+op[0] => c.IN0
+op[0] => c.IN0
+op[0] => c.IN0
+op[1] => c.IN1
+op[1] => c.IN1
+op[1] => c.IN1
+op[1] => c.IN1
+c[0] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[4] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[5] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[6] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[7] <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+a[4] => OneBitAdder:add5.a
+a[5] => OneBitAdder:add6.a
+a[6] => OneBitAdder:add7.a
+a[7] => OneBitAdder:add8.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+b[4] => OneBitAdder:add5.b
+b[5] => OneBitAdder:add6.b
+b[6] => OneBitAdder:add7.b
+b[7] => OneBitAdder:add8.b
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+c[4] <= OneBitAdder:add5.s
+c[5] <= OneBitAdder:add6.s
+c[6] <= OneBitAdder:add7.s
+c[7] <= OneBitAdder:add8.s
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add5
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add5|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add5|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add6
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add6|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add6|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add7
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add7|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add7|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add8
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add8|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitAdder:adder1|OneBitAdder:add8|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1
+a[0] => EightBitAdder:add2.a[0]
+a[1] => EightBitAdder:add2.a[1]
+a[2] => EightBitAdder:add2.a[2]
+a[3] => EightBitAdder:add2.a[3]
+a[4] => EightBitAdder:add2.a[4]
+a[5] => EightBitAdder:add2.a[5]
+a[6] => EightBitAdder:add2.a[6]
+a[7] => EightBitAdder:add2.a[7]
+b[0] => EightBitAdder:add1.a[0]
+b[1] => EightBitAdder:add1.a[1]
+b[2] => EightBitAdder:add1.a[2]
+b[3] => EightBitAdder:add1.a[3]
+b[4] => EightBitAdder:add1.a[4]
+b[5] => EightBitAdder:add1.a[5]
+b[6] => EightBitAdder:add1.a[6]
+b[7] => EightBitAdder:add1.a[7]
+c[0] <= EightBitAdder:add2.c[0]
+c[1] <= EightBitAdder:add2.c[1]
+c[2] <= EightBitAdder:add2.c[2]
+c[3] <= EightBitAdder:add2.c[3]
+c[4] <= EightBitAdder:add2.c[4]
+c[5] <= EightBitAdder:add2.c[5]
+c[6] <= EightBitAdder:add2.c[6]
+c[7] <= EightBitAdder:add2.c[7]
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+a[4] => OneBitAdder:add5.a
+a[5] => OneBitAdder:add6.a
+a[6] => OneBitAdder:add7.a
+a[7] => OneBitAdder:add8.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+b[4] => OneBitAdder:add5.b
+b[5] => OneBitAdder:add6.b
+b[6] => OneBitAdder:add7.b
+b[7] => OneBitAdder:add8.b
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+c[4] <= OneBitAdder:add5.s
+c[5] <= OneBitAdder:add6.s
+c[6] <= OneBitAdder:add7.s
+c[7] <= OneBitAdder:add8.s
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add5
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add5|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add5|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add6
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add6|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add6|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add7
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add7|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add7|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add8
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add8|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add1|OneBitAdder:add8|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+a[4] => OneBitAdder:add5.a
+a[5] => OneBitAdder:add6.a
+a[6] => OneBitAdder:add7.a
+a[7] => OneBitAdder:add8.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+b[4] => OneBitAdder:add5.b
+b[5] => OneBitAdder:add6.b
+b[6] => OneBitAdder:add7.b
+b[7] => OneBitAdder:add8.b
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+c[4] <= OneBitAdder:add5.s
+c[5] <= OneBitAdder:add6.s
+c[6] <= OneBitAdder:add7.s
+c[7] <= OneBitAdder:add8.s
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add5
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add5|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add5|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add6
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add6|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add6|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add7
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add7|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add7|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add8
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add8|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitSubtractor:subtract1|EightBitAdder:add2|OneBitAdder:add8|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1
+a[0] => mux1:m4.x1
+a[0] => mux1:m8.x0
+a[1] => mux1:m3.x1
+a[1] => mux1:m7.x0
+a[2] => mux1:m2.x1
+a[2] => mux1:m6.x0
+a[3] => mux1:m1.x1
+a[3] => mux1:m5.x0
+a[4] => mux1:m4.x0
+a[5] => mux1:m3.x0
+a[6] => mux1:m2.x0
+a[7] => mux1:m1.x0
+b[0] => mux1:m17.s
+b[0] => mux1:m18.s
+b[0] => mux1:m19.s
+b[0] => mux1:m20.s
+b[0] => mux1:m21.s
+b[0] => mux1:m22.s
+b[0] => mux1:m23.s
+b[0] => mux1:m24.s
+b[1] => mux1:m9.s
+b[1] => mux1:m10.s
+b[1] => mux1:m11.s
+b[1] => mux1:m12.s
+b[1] => mux1:m13.s
+b[1] => mux1:m14.s
+b[1] => mux1:m15.s
+b[1] => mux1:m16.s
+b[2] => mux1:m1.s
+b[2] => mux1:m2.s
+b[2] => mux1:m3.s
+b[2] => mux1:m4.s
+b[2] => mux1:m5.s
+b[2] => mux1:m6.s
+b[2] => mux1:m7.s
+b[2] => mux1:m8.s
+b[3] => ~NO_FANOUT~
+b[4] => ~NO_FANOUT~
+b[5] => ~NO_FANOUT~
+b[6] => ~NO_FANOUT~
+b[7] => ~NO_FANOUT~
+c[0] <= mux1:m24.c
+c[1] <= mux1:m23.c
+c[2] <= mux1:m22.c
+c[3] <= mux1:m21.c
+c[4] <= mux1:m20.c
+c[5] <= mux1:m19.c
+c[6] <= mux1:m18.c
+c[7] <= mux1:m17.c
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m1
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m2
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m3
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m4
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m5
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m6
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m7
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m8
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m9
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m10
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m11
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m12
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m13
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m14
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m15
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m16
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m17
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m18
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m19
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m20
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m21
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m22
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m23
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitLeftShift:left1|MUX1:m24
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1
+a[0] => mux1:m8.x0
+a[1] => mux1:m7.x0
+a[2] => mux1:m6.x0
+a[3] => mux1:m5.x0
+a[4] => mux1:m4.x0
+a[4] => mux1:m8.x1
+a[5] => mux1:m3.x0
+a[5] => mux1:m7.x1
+a[6] => mux1:m2.x0
+a[6] => mux1:m6.x1
+a[7] => mux1:m1.x0
+a[7] => mux1:m5.x1
+b[0] => mux1:m17.s
+b[0] => mux1:m18.s
+b[0] => mux1:m19.s
+b[0] => mux1:m20.s
+b[0] => mux1:m21.s
+b[0] => mux1:m22.s
+b[0] => mux1:m23.s
+b[0] => mux1:m24.s
+b[1] => mux1:m9.s
+b[1] => mux1:m10.s
+b[1] => mux1:m11.s
+b[1] => mux1:m12.s
+b[1] => mux1:m13.s
+b[1] => mux1:m14.s
+b[1] => mux1:m15.s
+b[1] => mux1:m16.s
+b[2] => mux1:m1.s
+b[2] => mux1:m2.s
+b[2] => mux1:m3.s
+b[2] => mux1:m4.s
+b[2] => mux1:m5.s
+b[2] => mux1:m6.s
+b[2] => mux1:m7.s
+b[2] => mux1:m8.s
+b[3] => ~NO_FANOUT~
+b[4] => ~NO_FANOUT~
+b[5] => ~NO_FANOUT~
+b[6] => ~NO_FANOUT~
+b[7] => ~NO_FANOUT~
+c[0] <= mux1:m24.c
+c[1] <= mux1:m23.c
+c[2] <= mux1:m22.c
+c[3] <= mux1:m21.c
+c[4] <= mux1:m20.c
+c[5] <= mux1:m19.c
+c[6] <= mux1:m18.c
+c[7] <= mux1:m17.c
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m1
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m2
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m3
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m4
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m5
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m6
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m7
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m8
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m9
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m10
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m11
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m12
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m13
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m14
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m15
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m16
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m17
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m18
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m19
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m20
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m21
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m22
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m23
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|ALU:dut_instance|EightBitRightShift:right1|MUX1:m24
+x0 => c.IN0
+x1 => c.IN0
+s => c.IN1
+s => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+

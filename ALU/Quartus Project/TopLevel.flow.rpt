@@ -1,0 +1,111 @@
+Flow report for TopLevel
+Thu Feb 18 15:13:16 2016
+Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------+
+; Flow Summary                                                         ;
++---------------------------+------------------------------------------+
+; Flow Status               ; Successful - Thu Feb 18 15:13:16 2016    ;
+; Quartus II 32-bit Version ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
+; Revision Name             ; TopLevel                                 ;
+; Top-level Entity Name     ; TopLevel                                 ;
+; Family                    ; MAX V                                    ;
+; Device                    ; 5M1270ZT144C5                            ;
+; Timing Models             ; Final                                    ;
+; Total logic elements      ; 168 / 1,270 ( 13 % )                     ;
+; Total pins                ; 5 / 114 ( 4 % )                          ;
+; Total virtual pins        ; 0                                        ;
+; UFM blocks                ; 0 / 1 ( 0 % )                            ;
++---------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/18/2016 15:13:00 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; TopLevel            ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                    ;
++------------------------+---------------------------------+---------------+-------------+------------+
+; Assignment Name        ; Value                           ; Default Value ; Entity Name ; Section Id ;
++------------------------+---------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID  ; 202492452925636.145578858010454 ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP ; 85                              ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP ; 0                               ; --            ; --          ; --         ;
++------------------------+---------------------------------+---------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; --                  ; 00:00:02                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; --                  ; 00:00:03                           ;
+; Assembler                 ; 00:00:00     ; 1.0                     ; --                  ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; --                  ; 00:00:01                           ;
+; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:07                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                  ;
++---------------------------+-----------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname      ; OS Name        ; OS Version ; Processor type ;
++---------------------------+-----------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; kalpesh-Inspiron-3542 ; Ubuntu 14.04.3 ; 14         ; x86_64         ;
+; Fitter                    ; kalpesh-Inspiron-3542 ; Ubuntu 14.04.3 ; 14         ; x86_64         ;
+; Assembler                 ; kalpesh-Inspiron-3542 ; Ubuntu 14.04.3 ; 14         ; x86_64         ;
+; TimeQuest Timing Analyzer ; kalpesh-Inspiron-3542 ; Ubuntu 14.04.3 ; 14         ; x86_64         ;
++---------------------------+-----------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off TopLevel -c TopLevel
+quartus_fit --read_settings_files=off --write_settings_files=off TopLevel -c TopLevel
+quartus_asm --read_settings_files=off --write_settings_files=off TopLevel -c TopLevel
+quartus_sta TopLevel -c TopLevel
+
+
+
