@@ -1,0 +1,875 @@
+|TopLevel
+d1[0] => BCD_Valid:v1.inp[0]
+d1[0] => BCD_Valid_One_Bit:m2.inp[0]
+d1[0] => BCD_Adder:add.d1[0]
+d1[1] => BCD_Valid:v1.inp[1]
+d1[1] => BCD_Valid_One_Bit:m2.inp[1]
+d1[1] => BCD_Adder:add.d1[1]
+d1[2] => BCD_Valid:v1.inp[2]
+d1[2] => BCD_Valid_One_Bit:m2.inp[2]
+d1[2] => BCD_Adder:add.d1[2]
+d1[3] => BCD_Valid:v1.inp[3]
+d1[3] => BCD_Valid_One_Bit:m2.inp[3]
+d1[3] => BCD_Adder:add.d1[3]
+d0[0] => BCD_Valid:v0.inp[0]
+d0[0] => BCD_Valid_One_Bit:m1.inp[0]
+d0[0] => BCD_Adder:add.d0[0]
+d0[1] => BCD_Valid:v0.inp[1]
+d0[1] => BCD_Valid_One_Bit:m1.inp[1]
+d0[1] => BCD_Adder:add.d0[1]
+d0[2] => BCD_Valid:v0.inp[2]
+d0[2] => BCD_Valid_One_Bit:m1.inp[2]
+d0[2] => BCD_Adder:add.d0[2]
+d0[3] => BCD_Valid:v0.inp[3]
+d0[3] => BCD_Valid_One_Bit:m1.inp[3]
+d0[3] => BCD_Adder:add.d0[3]
+s1[0] <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s1[1] <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s1[2] <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s1[3] <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s0[0] <= s0.DB_MAX_OUTPUT_PORT_TYPE
+s0[1] <= s0.DB_MAX_OUTPUT_PORT_TYPE
+s0[2] <= s0.DB_MAX_OUTPUT_PORT_TYPE
+s0[3] <= s0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_valid:v0
+inp[0] => op.IN1
+inp[1] => op.IN0
+inp[1] => op.IN1
+inp[1] => op.IN0
+inp[2] => op.IN1
+inp[2] => op.IN0
+inp[2] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op[3].DATAIN
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= inp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_valid:v1
+inp[0] => op.IN1
+inp[1] => op.IN0
+inp[1] => op.IN1
+inp[1] => op.IN0
+inp[2] => op.IN1
+inp[2] => op.IN0
+inp[2] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op[3].DATAIN
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= inp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Valid_One_Bit:m1
+inp[0] => BCD_Valid:valid.inp[0]
+inp[1] => BCD_Valid:valid.inp[1]
+inp[2] => BCD_Valid:valid.inp[2]
+inp[3] => BCD_Valid:valid.inp[3]
+op <= op.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Valid_One_Bit:m1|BCD_valid:valid
+inp[0] => op.IN1
+inp[1] => op.IN0
+inp[1] => op.IN1
+inp[1] => op.IN0
+inp[2] => op.IN1
+inp[2] => op.IN0
+inp[2] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op[3].DATAIN
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= inp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Valid_One_Bit:m2
+inp[0] => BCD_Valid:valid.inp[0]
+inp[1] => BCD_Valid:valid.inp[1]
+inp[2] => BCD_Valid:valid.inp[2]
+inp[3] => BCD_Valid:valid.inp[3]
+op <= op.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Valid_One_Bit:m2|BCD_valid:valid
+inp[0] => op.IN1
+inp[1] => op.IN0
+inp[1] => op.IN1
+inp[1] => op.IN0
+inp[2] => op.IN1
+inp[2] => op.IN0
+inp[2] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op[3].DATAIN
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= inp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add
+d1[0] => FourBitAdder:add2.a[0]
+d1[1] => FourBitAdder:add2.a[1]
+d1[2] => FourBitAdder:add2.a[2]
+d1[3] => FourBitAdder:add2.a[3]
+d0[0] => FourBitAdder:add1.a[0]
+d0[1] => FourBitAdder:add1.a[1]
+d0[2] => FourBitAdder:add1.a[2]
+d0[3] => FourBitAdder:add1.a[3]
+s1[0] <= Multi_Input_MUX:mux2.op[0]
+s1[1] <= Multi_Input_MUX:mux2.op[1]
+s1[2] <= Multi_Input_MUX:mux2.op[2]
+s1[3] <= Multi_Input_MUX:mux2.op[3]
+s0[0] <= Multi_Input_MUX:mux1.op[0]
+s0[1] <= Multi_Input_MUX:mux1.op[1]
+s0[2] <= Multi_Input_MUX:mux1.op[2]
+s0[3] <= Multi_Input_MUX:mux1.op[3]
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+cin => OneBitAdder:add1.cin
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+cout <= OneBitAdder:add4.cout
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add1|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+cin => OneBitAdder:add1.cin
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+cout <= OneBitAdder:add4.cout
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add2|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+cin => OneBitAdder:add1.cin
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+cout <= OneBitAdder:add4.cout
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add3|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|BCD_Valid_One_Bit:valid1
+inp[0] => BCD_Valid:valid.inp[0]
+inp[1] => BCD_Valid:valid.inp[1]
+inp[2] => BCD_Valid:valid.inp[2]
+inp[3] => BCD_Valid:valid.inp[3]
+op <= op.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|BCD_Valid_One_Bit:valid1|BCD_valid:valid
+inp[0] => op.IN1
+inp[1] => op.IN0
+inp[1] => op.IN1
+inp[1] => op.IN0
+inp[2] => op.IN1
+inp[2] => op.IN0
+inp[2] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op[3].DATAIN
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= inp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|Multi_Input_MUX:mux1
+inp1[0] => op.IN0
+inp1[1] => op.IN0
+inp1[2] => op.IN0
+inp1[3] => op.IN0
+cin1 => cout.IN0
+inp0[0] => op.IN0
+inp0[1] => op.IN0
+inp0[2] => op.IN0
+inp0[3] => op.IN0
+cin0 => cout.IN0
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => cout.IN1
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => cout.IN1
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= op.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+cin => OneBitAdder:add1.cin
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+cout <= OneBitAdder:add4.cout
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add4|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5
+a[0] => OneBitAdder:add1.a
+a[1] => OneBitAdder:add2.a
+a[2] => OneBitAdder:add3.a
+a[3] => OneBitAdder:add4.a
+b[0] => OneBitAdder:add1.b
+b[1] => OneBitAdder:add2.b
+b[2] => OneBitAdder:add3.b
+b[3] => OneBitAdder:add4.b
+cin => OneBitAdder:add1.cin
+c[0] <= OneBitAdder:add1.s
+c[1] <= OneBitAdder:add2.s
+c[2] <= OneBitAdder:add3.s
+c[3] <= OneBitAdder:add4.s
+cout <= OneBitAdder:add4.cout
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add1
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add1|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add1|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add2
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add2|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add2|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add3
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add3|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add3|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add4
+a => cout.IN0
+a => XOR1:X1.a
+b => cout.IN1
+b => XOR1:X1.b
+cin => cout.IN1
+cin => XOR1:X2.b
+s <= XOR1:X2.s
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add4|XOR1:X1
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|FourBitAdder:add5|OneBitAdder:add4|XOR1:X2
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|BCD_Valid_One_Bit:valid2
+inp[0] => BCD_Valid:valid.inp[0]
+inp[1] => BCD_Valid:valid.inp[1]
+inp[2] => BCD_Valid:valid.inp[2]
+inp[3] => BCD_Valid:valid.inp[3]
+op <= op.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|BCD_Valid_One_Bit:valid2|BCD_valid:valid
+inp[0] => op.IN1
+inp[1] => op.IN0
+inp[1] => op.IN1
+inp[1] => op.IN0
+inp[2] => op.IN1
+inp[2] => op.IN0
+inp[2] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op[3].DATAIN
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= inp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD_Adder:add|Multi_Input_MUX:mux2
+inp1[0] => op.IN0
+inp1[1] => op.IN0
+inp1[2] => op.IN0
+inp1[3] => op.IN0
+cin1 => cout.IN0
+inp0[0] => op.IN0
+inp0[1] => op.IN0
+inp0[2] => op.IN0
+inp0[3] => op.IN0
+cin0 => cout.IN0
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => cout.IN1
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => op.IN1
+choose => cout.IN1
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= op.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

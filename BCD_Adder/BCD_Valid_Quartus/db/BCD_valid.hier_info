@@ -1,0 +1,18 @@
+|BCD_valid
+inp[0] => op.IN1
+inp[1] => op.IN0
+inp[1] => op.IN1
+inp[1] => op.IN0
+inp[2] => op.IN1
+inp[2] => op.IN0
+inp[2] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op.IN1
+inp[3] => op[3].DATAIN
+op[0] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[1] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[2] <= op.DB_MAX_OUTPUT_PORT_TYPE
+op[3] <= inp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
