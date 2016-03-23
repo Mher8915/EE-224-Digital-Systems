@@ -1,5 +1,5 @@
 Fitter report for TopLevel
-Thu Feb 18 15:13:11 2016
+Thu Mar 10 16:40:04 2016
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +---------------------------+------------------------------------------+
-; Fitter Status             ; Successful - Thu Feb 18 15:13:11 2016    ;
+; Fitter Status             ; Successful - Thu Mar 10 16:40:04 2016    ;
 ; Quartus II 32-bit Version ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name             ; TopLevel                                 ;
 ; Top-level Entity Name     ; TopLevel                                 ;
@@ -133,7 +133,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/kalpesh/Academics/EE 214/Lab_6_vector/Quartus Project/TopLevel.pin.
+The pin-out file can be found in /home/kalpesh/Academics/EE 214/Github/ALU/Quartus Project/TopLevel.pin.
 
 
 +------------------------------------------------------------------------------------+
@@ -933,7 +933,7 @@ This will disable optimization of problematic paths and expose them for further 
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Fitter
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Thu Feb 18 15:13:06 2016
+    Info: Processing started: Thu Mar 10 16:40:01 2016
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off TopLevel -c TopLevel
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device 5M1270ZT144C5 for design "TopLevel"
@@ -983,7 +983,7 @@ Info (186468): Started processing fast register assignments
 Info (186469): Finished processing fast register assignments
 Extra Info (176245): Finished moving registers into LUTs: elapsed time is 00:00:00
 Info (176235): Finished register packing
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -998,9 +998,9 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II 32-bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 364 megabytes
-    Info: Processing ended: Thu Feb 18 15:13:11 2016
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 363 megabytes
+    Info: Processing ended: Thu Mar 10 16:40:04 2016
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

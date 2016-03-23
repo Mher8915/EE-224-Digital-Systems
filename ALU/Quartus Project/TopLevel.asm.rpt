@@ -1,5 +1,5 @@
 Assembler report for TopLevel
-Thu Feb 18 15:13:16 2016
+Thu Mar 10 16:40:06 2016
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Feb 18 15:13:16 2016 ;
+; Assembler Status      ; Successful - Thu Mar 10 16:40:06 2016 ;
 ; Revision Name         ; TopLevel                              ;
 ; Top-level Entity Name ; TopLevel                              ;
 ; Family                ; MAX V                                 ;
@@ -101,13 +101,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Thu Feb 18 15:13:15 2016
+    Info: Processing started: Thu Mar 10 16:40:05 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off TopLevel -c TopLevel
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 316 megabytes
-    Info: Processing ended: Thu Feb 18 15:13:16 2016
+    Info: Processing ended: Thu Mar 10 16:40:06 2016
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
